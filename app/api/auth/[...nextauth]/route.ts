@@ -9,7 +9,7 @@ export const authOptions: AuthOptions = {
       clientSecret: process.env.SPOTIFY_CLIENT_SECRET!,
       authorization: {
         params: {
-          scope: 'user-read-email user-read-private user-read-playback-state user-modify-playback-state'
+          scope: process.env.SPOTIFY_API_SCOPE!
         }
       }
     }),
@@ -24,6 +24,7 @@ export const authOptions: AuthOptions = {
     },
     async session({session, token}) {
       console.log('token', token);
+      session.user = token
       return session
     }
   }

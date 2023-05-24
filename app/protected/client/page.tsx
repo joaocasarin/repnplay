@@ -15,7 +15,15 @@ const ClientProtectedPage = () => {
           protected page
         </h1>
         <h2 className='mt-4 font-medium'>You are logged in as:</h2>
-        <p className='mt-4'>{JSON.stringify(session)}</p>
+        <ul>
+          {session?.user && (
+            Object.keys(session.user).map((key) => (
+              <li key={key}>
+                <strong>{key}: </strong> {session.user[key]}
+              </li>
+            ))
+          )}
+        </ul>
       </div>
     </section>
     );
