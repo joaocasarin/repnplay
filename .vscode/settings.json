@@ -1,0 +1,11 @@
+{
+    "files.eol": "\n",
+    "files.exclude": {
+        "**/.git": false
+    },
+    "eslint.validate": ["javascript", "typescript"],
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "docwriter.progress.trackMethods": false,
+    "docwriter.progress.trackFunctions": false
+}
